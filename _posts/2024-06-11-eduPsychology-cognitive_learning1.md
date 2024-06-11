@@ -4,6 +4,7 @@ title: "第三章	认知学习：基本过程"
 date: 2024-06-11
 tags: [edu_psychology]
 comments: false
+toc: true
 author: Magiciannny
 ---
 
