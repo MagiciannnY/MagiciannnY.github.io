@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "走进教育心理学——行为学习"
+title: "第二章	行为学习"
 date: 2024-06-09
 tags: [edu_psychology]
 comments: false
@@ -81,9 +81,9 @@ author: Magiciannny
 
 严格定义：中性刺激因与无条件刺激或条件刺激配对而获得<u>诱发应答性反应的力量</u>的过程。
 
-<img src="2024-06-09-eduPsychology/image-20240609140041648.png" alt="image-20240609140041648" style="zoom:80%;" />
+![image-20240609140041648](2024-06-09-eduPsychology/image-20240609140041648.png)
 
-<img src="2024-06-09-eduPsychology/image-20240609140307053.png" alt="image-20240609140307053" style="zoom:80%;" />
+![image-20240609140307053](2024-06-09-eduPsychology/image-20240609140307053.png)
 
 ### 普遍性
 
