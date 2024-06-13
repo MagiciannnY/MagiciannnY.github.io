@@ -82,9 +82,9 @@ author: Magiciannny
 
 严格定义：中性刺激因与无条件刺激或条件刺激配对而获得<u>诱发应答性反应的力量</u>的过程。
 
-![image-20240609140041648](2024-06-09-eduPsychology-behavior_learning/image-20240609140041648.png)
+![img1](../images/2024-06-09-eduPsychology-behavior_learning/img1.png)
 
-![image-20240609140307053](2024-06-09-eduPsychology-behavior_learning/image-20240609140307053.png)
+![img2](../images/2024-06-09-eduPsychology-behavior_learning/img2.png)
 
 ### 普遍性
 
