@@ -3,11 +3,12 @@ layout: post
 title: "牛客周赛 Round 46 E-立希喂猫"
 data: 2024-06-16
 tags: [acm]
-toc: true
+comment: true
+toc: false
 author: Magiciannny
 ---
 
-原题链接：https://ac.nowcoder.com/acm/contest/84444/E
+原题链接：[牛客周赛 Round 46 E-立希喂猫](https://ac.nowcoder.com/acm/contest/84444/E)
 
 ## 题意
 
