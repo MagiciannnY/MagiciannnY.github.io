@@ -10,10 +10,106 @@ author: Magiciannny
 
 ## 凸包问题以及凸多边形的直径
 
-[P1452 【模板】旋转卡壳 | [USACO03FALL] Beauty Contest G](https://www.luogu.com.cn/problem/P1452) 
+模板链接：[P1452 【模板】旋转卡壳](https://www.luogu.com.cn/problem/P1452) 
 
-<iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28222%2C171%2C99%2C1%29&t=duotone-dark&wt=none&l=text%2Fx-c%2B%2Bsrc&width=970.5&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%2523include%2520%253Cbits%252Fstdc%252B%252B.h%253E%250Ausing%2520namespace%2520std%253B%250Ausing%2520ll%2520%253D%2520long%2520long%253B%250Atemplate%2520%253Ctypename%2520T%253E%250Astruct%2520Point%2520%257B%250A%2520%2520%2520%2520T%2520x%252C%2520y%253B%250A%2520%2520%250A%2520%2520%2520%2520%252F%252F%2520%25E6%259E%2584%25E9%2580%25A0%25E5%2587%25BD%25E6%2595%25B0%250A%2520%2520%2520%2520Point%28%29%2520%253A%2520x%280%29%252C%2520y%280%29%2520%257B%257D%250A%2520%2520%2520%2520template%2520%253Ctypename%2520A%252C%2520typename%2520B%253E%250A%2520%2520%2520%2520Point%28A%2520x%252C%2520B%2520y%29%2520%253A%2520x%28x%29%252C%2520y%28y%29%2520%257B%257D%250A%2520%2520%2520%2520%252F%252F%2520pair%25E8%25BD%25ACPoint%250A%2520%2520%2520%2520template%2520%253Ctypename%2520A%252C%2520typename%2520B%253E%250A%2520%2520%2520%2520Point%28pair%253CA%252C%2520B%253E%2520p%29%2520%253A%2520x%28p.first%29%252C%2520y%28p.second%29%2520%257B%257D%250A%2520%2520%2520%2520%250A%2520%2520%2520%2520%252F%252F%2520%25E9%2587%258D%25E8%25BD%25BD%25E8%25BF%2590%25E7%25AE%2597%25E7%25AC%25A6%250A%2520%2520%2520%2520Point%2520operator%252B%253D%28const%2520Point%2520p%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520x%2520%252B%253D%2520p.x%252C%2520y%2520%252B%253D%2520p.y%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520return%2520*this%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520Point%2520operator-%253D%28const%2520Point%2520p%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520x%2520-%253D%2520p.x%252C%2520y%2520-%253D%2520p.y%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520return%2520*this%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520Point%2520operator%252B%28Point%2520p%29%2520const%2520%257B%2520return%2520%257Bx%2520%252B%2520p.x%252C%2520y%2520%252B%2520p.y%257D%253B%2520%257D%250A%2520%2520%2520%2520Point%2520operator-%28Point%2520p%29%2520const%2520%257B%2520return%2520%257Bx%2520-%2520p.x%252C%2520y%2520-%2520p.y%257D%253B%2520%257D%250A%2520%2520%2520%2520bool%2520operator%253D%253D%28Point%2520p%29%2520const%2520%257B%2520return%2520x%2520%253D%253D%2520p.x%2520%2526%2526%2520y%2520%253D%253D%2520p.y%253B%2520%257D%250A%2520%2520%2520%2520bool%2520operator%21%253D%28Point%2520p%29%2520const%2520%257B%2520return%2520x%2520%21%253D%2520p.x%2520%257C%257C%2520y%2520%21%253D%2520p.y%253B%2520%257D%250A%2520%2520%2520%2520Point%2520operator-%28%29%2520const%2520%257B%2520return%2520%257B-x%252C%2520-y%257D%253B%2520%257D%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%252F%252F%2520%25E5%2585%25B3%25E4%25BA%258E%25E4%25B8%25AD%25E5%25BF%2583%25E5%25AF%25B9%25E7%25A7%25B0%250A%2520%2520%2520%2520Point%2520operator*%28T%2520t%29%2520const%2520%257B%2520return%2520%257Bx%2520*%2520t%252C%2520y%2520*%2520t%257D%253B%2520%257D%2520%2520%252F%252F%2520%25E6%2595%25B0%25E4%25B9%2598%25E8%25BF%2590%25E7%25AE%2597%250A%2520%2520%2520%2520Point%2520operator%252F%28T%2520t%29%2520const%2520%257B%2520return%2520%257Bx%2520%252F%2520t%252C%2520y%2520%252F%2520t%257D%253B%2520%257D%250A%2520%2520%2520%2520%250A%2520%2520%252F%252F%2520%25E5%25A4%25A7%25E5%25B0%258F%25E6%25AF%2594%25E8%25BE%2583%250A%2520%2520%2520%2520bool%2520operator%253C%28Point%2520p%29%2520const%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28x%2520%21%253D%2520p.x%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520return%2520x%2520%253C%2520p.x%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520return%2520y%2520%253C%2520p.y%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%250A%2520%2520%2520%2520%252F%252F%2520%25E7%2582%25B9%25E4%25B9%2598%250A%2520%2520%2520%2520T%2520dot%28Point%2520other%29%2520%257B%2520return%2520x%2520*%2520other.x%2520%252B%2520y%2520*%2520other.y%253B%2520%257D%250A%2520%2520%2520%2520%250A%2520%2520%2520%2520%252F%252F%2520%25E5%258F%2589%25E4%25B9%2598%250A%2520%2520%2520%2520T%2520det%28Point%2520other%29%2520%257B%2520return%2520x%2520*%2520other.y%2520-%2520y%2520*%2520other.x%253B%2520%257D%250A%2520%2520%2520%2520%250A%2520%2520%2520%2520%252F%252F%2520%25E5%25B9%25B3%25E6%2596%25B9%25E5%2592%258C%25E5%25BC%2580%25E6%25A0%25B9%250A%2520%2520%2520%2520double%2520norm%28%29%2520%257B%2520return%2520sqrtl%28x%2520*%2520x%2520%252B%2520y%2520*%2520y%29%253B%2520%257D%250A%2520%2520%2520%2520double%2520norm2%28%29%2520%257B%2520return%2520x%2520*%2520x%2520%252B%2520y%2520*%2520y%253B%2520%257D%250A%257D%253B%250A%250A%252F%252F%2520%25E4%25BC%25A0%25E5%2585%25A5%25E4%25B8%258B%25E6%25A0%2587%25E4%25BB%258E%25E9%259B%25B6%25E5%25BC%2580%25E5%25A7%258B%25E7%259A%2584%25E7%2582%25B9%25E6%2595%25B0%25E7%25BB%2584%25EF%25BC%258C%25E8%25BF%2594%25E5%259B%259E%25E5%2587%25B8%25E5%258C%2585%25E6%2595%25B0%25E7%25BB%2584%250Atemplate%2520%253Ctypename%2520T%253E%250Avector%253CPoint%253CT%253E%253E%2520GrahamScan%28vector%253CPoint%253CT%253E%253E%2526%2520p%29%2520%257B%250A%2520%2520%2520%2520sort%28p.begin%28%29%252C%2520p.end%28%29%29%253B%250A%2520%2520%2520%2520int%2520n%2520%253D%2520p.size%28%29%252C%2520m%2520%253D%25200%253B%250A%2520%2520%2520%2520vector%253CPoint%253CT%253E%253E%2520res%28n%2520%252B%25201%29%253B%250A%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520n%253B%2520i%252B%252B%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520while%2520%28m%2520%253E%25201%2520%2526%2526%2520%21%28%28res%255Bm%2520-%25201%255D%2520-%2520res%255Bm%2520-%25202%255D%29.det%28p%255Bi%255D%2520-%2520res%255Bm%2520-%25202%255D%29%2520%253E%25200%29%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520m--%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520res%255Bm%252B%252B%255D%2520%253D%2520p%255Bi%255D%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520int%2520kk%2520%253D%2520m%253B%250A%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%2520n%2520-%25202%253B%2520i%2520%253E%253D%25200%253B%2520i--%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520while%2520%28m%2520%253E%2520kk%2520%2526%2526%2520%21%28%28res%255Bm%2520-%25201%255D%2520-%2520res%255Bm%2520-%25202%255D%29.det%28p%255Bi%255D%2520-%2520res%255Bm%2520-%25202%255D%29%2520%253E%25200%29%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520m--%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520res%255Bm%252B%252B%255D%2520%253D%2520p%255Bi%255D%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%252F%252F%2520%25E5%2587%25B8%25E5%258C%2585%25E6%259C%2589m%25E4%25B8%25AA%25E9%25A1%25B6%25E7%2582%25B9%250A%2520%2520%2520%2520if%2520%28n%2520%253E%25201%29%2520m--%253B%250A%2520%2520%2520%2520res.erase%28res"
-  style="width: 1024px; height: 473px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+template <typename T>
+struct Point {
+    T x, y;
+    // 构造函数
+    Point() : x(0), y(0) {}
+    template <typename A, typename B>
+    Point(A x, B y) : x(x), y(y) {}
+    // pair转Point
+    template <typename A, typename B>
+    Point(pair<A, B> p) : x(p.first), y(p.second) {}
+    // 重载运算符
+    Point operator+=(const Point p) {
+        x += p.x, y += p.y;
+        return *this;
+    }
+    Point operator-=(const Point p) {
+        x -= p.x, y -= p.y;
+        return *this;
+    }
+    Point operator+(Point p) const { return {x + p.x, y + p.y}; }
+    Point operator-(Point p) const { return {x - p.x, y - p.y}; }
+    bool operator==(Point p) const { return x == p.x && y == p.y; }
+    bool operator!=(Point p) const { return x != p.x || y != p.y; }
+    Point operator-() const { return {-x, -y}; }           // 关于中心对称
+    Point operator*(T t) const { return {x * t, y * t}; }  // 数乘运算
+    Point operator/(T t) const { return {x / t, y / t}; }
+    // 大小比较
+    bool operator<(Point p) const {
+        if (x != p.x)
+            return x < p.x;
+        return y < p.y;
+    }
+    // 点乘
+    T dot(Point other) { return x * other.x + y * other.y; }
+    // 叉乘
+    T det(Point other) { return x * other.y - y * other.x; }
+    // 平方和开根
+    double norm() { return sqrtl(x * x + y * y); }
+    double norm2() { return x * x + y * y; }
+};
+// 传入下标从零开始的点数组，返回凸包数组
+template <typename T>
+vector<Point<T>> GrahamScan(vector<Point<T>>& p) {
+    sort(p.begin(), p.end());
+    int n = p.size(), m = 0;
+    vector<Point<T>> res(n + 1);
+    for (int i = 0; i < n; i++) {
+        while (m > 1 && !((res[m - 1] - res[m - 2]).det(p[i] - res[m - 2]) > 0))
+            m--;
+        res[m++] = p[i];
+    }
+    int kk = m;
+    for (int i = n - 2; i >= 0; i--) {
+        while (m > kk && !((res[m - 1] - res[m - 2]).det(p[i] - res[m - 2]) > 0))
+            m--;
+        res[m++] = p[i];
+    }
+    // 凸包有m个顶点
+    if (n > 1) m--;
+    res.erase(res.begin() + m, res.end());
+    return res;
+}
+// 求凸包直径，需要传入凸包数组，Point为(x, y)形式
+template <typename T>
+ll find_diameter(vector<Point<T>>& XY) {
+    XY.push_back(XY[0]);
+    ll mx = 0;                // 最大值
+    int top = XY.size() - 1;  // top = 点数 + 1
+    int j = 2;
+    if (top < 3)
+        return (XY[0] - XY[1]).norm2();
+    for (int i = 0; i < top; i++) {
+        while (abs((XY[i + 1] - XY[i]).det(XY[j] - XY[i])) <= abs((XY[i + 1] - XY[i]).det(XY[(j + 1) % top] - XY[i])))
+            j = (j + 1) % top;
+        ll d1 = (XY[i + 1] - XY[j]).norm2(), d2 = (XY[i] - XY[j]).norm2();
+        mx = max(mx, max(d1, d2));
+    }
+    return mx;
+}
+using P = Point<ll>;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int n, x, y;
+    cin >> n;
+    vector<P> G(n);
+    for (int i = 0; i < n; i++) {
+        cin >> G[i].x >> G[i].y;
+    }
+    vector<P> D = GrahamScan(G);
+    ll ans = find_diameter(D);
+    cout << ans << '\n';
+}
+```
+
+
+
